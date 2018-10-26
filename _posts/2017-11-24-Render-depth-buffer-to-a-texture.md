@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Render depth buffer to a texture."
+last_modified_at: 2017-03-09T14:25:52-05:00
+---
+
 Today I solved a problem that was bugging me for almost two weeks. While rendering the depth values to a texture
 bound to the depth buffer of a framebuffer object (FBO) I forgot to clear the depth buffer bit. This cause the depth values in the texture
 to only by updated whenever the new values were smaller than the ones in the texture. The visual effect of this bug 
