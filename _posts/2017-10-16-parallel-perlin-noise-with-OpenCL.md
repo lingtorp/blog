@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Parallel Perlin noise with OpenCL"
+last_modified_at: 2017-10-16
+tags:
+  - opencl
+  - perlin
+---
 <html>
 <head>
     <meta charset="UTF-8">
