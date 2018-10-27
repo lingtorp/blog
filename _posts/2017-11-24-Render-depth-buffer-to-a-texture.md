@@ -3,11 +3,7 @@ layout: post
 title: "Render depth buffer to a texture."
 last_modified_at: 2017-03-09T14:25:52-05:00
 tags:
-  - content
-  - css
-  - edge case
-  - lists
-  - markup
+  - opengl
 ---
 
 Today I solved a problem that was bugging me for almost two weeks. While rendering the depth values to a texture
