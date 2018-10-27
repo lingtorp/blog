@@ -16,6 +16,15 @@
         href="https://twitter.com/ALingtorp">
         Twitter
     </a>
+    
+    {% if tags_page %}
+    <a id="tags-link"
+        class="icon{% if page.url == '/tags' %} active{% endif %}"
+        title="Tags" aria-label="Tags"
+        href="{{ site.baseurl }}{{ tags_page.url }}">
+        {% include svg/tags.svg %}
+    </a>
+    {% endif %}
   
     {% include custom-icon-links.html %}
   </nav>
