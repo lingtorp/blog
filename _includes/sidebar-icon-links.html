@@ -1,20 +1,20 @@
 <nav id="sidebar-icon-links">
-    <a id="github-link"
-        class="icon" title="Github Project" aria-label="Github Project"
-        href="{{ site.hydeout.repo }}">
-    {% include svg/github.svg %}
+    <a id="subscribe-link"
+        class="icon" title="Github" aria-label="Github"
+        href="https://github.com/Entalpi">
+        Github
     </a>
 
     <a id="subscribe-link"
-       class="icon" title="Subscribe" aria-label="Subscribe"
-       href="{{ site.baseurl }}/{{ site.feed.path | default: 'feed.xml' }}">
-      {% include svg/feed.svg %}
+       class="icon" title="Subscribe" aria-label="CV"
+       href="{{ site.baseurl }}/cv.pdf">
+        CV/Résumé
     </a>
   
     <a id="subscribe-link"
-        class="icon" title="Subscribe" aria-label="Subscribe"
-        href="{{ site.baseurl }}/{{ site.feed.path | default: 'feed.xml' }}">
-        {% include svg/feed.svg %}
+        class="icon" title="Subscribe" aria-label="Twitter"
+        href="https://twitter.com/ALingtorp">
+        Twitter
     </a>
   
     {% include custom-icon-links.html %}
