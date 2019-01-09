@@ -5,11 +5,12 @@ last_modified_at: 2019-01-09
 tags:
   - MeineKraft
 ---
+
 This post will be about changes to the job system that resulted in some nice performance increases.
 
 Too bad that I did not take real measurements but on the other hand the performance increases at this point is so large that they are either obviously really good or really bad. It helps make some performance changes easier but later on I really need to gather hard numbers and judge things against them rather than the FPS meter.
 
-Full source code is available here: https://github.com/Entalpi/MeineKraft
+Full source code is available here: [https://github.com/Entalpi/MeineKraft](https://github.com/Entalpi/MeineKraft)
 
 # try_peeq
 ```cpp
