@@ -2,6 +2,8 @@
 layout: post
 title: "Job system improvements"
 last_modified_at: 2019-01-09
+tags:
+  - MeineKraft
 ---
 This post will be about changes to the job system that resulted in some nice performance increases.
 
