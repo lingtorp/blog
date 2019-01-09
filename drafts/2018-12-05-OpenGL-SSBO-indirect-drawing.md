@@ -3,8 +3,6 @@ layout: post
 title: "Generating draw commands on the GPU in OpenGL"
 last_modified_at: 2019-01-09
 ---
-# Draw command generation on the GPU
-
 ## Introduction
 So, I got stuck on a project that I am currently working on but thought I might as well write about the things I have learnt this week. My plan is to integrate some kind of view frustum culling into my rendering engine, MeineKraft, however before I am able to do that I wanted to explore this thing called indirect rendering.
 
