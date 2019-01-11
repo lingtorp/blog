@@ -1,8 +1,6 @@
 <div class="post-meta">
     {% if include.post.date != nil %}
     <span class="post-date">{{ include.post.date | date_to_string }}</span>
-    {% else %}
-    <a>Dammit ... </a>
     {% endif %}
     <span class="post-categories">
       {% for category in include.post.categories %}
