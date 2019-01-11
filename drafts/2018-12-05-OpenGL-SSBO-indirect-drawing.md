@@ -12,6 +12,8 @@ Our story begins with [glMultiDrawElementsIndirect](http://docs.gl/gl4/glMultiDr
 ## Indirect drawcalls
 Now that we got the confusion going we take a couple of steps back and see how the OpenGL drawcalls build on each other with each and everyone of them adding some sort of functionality. 
 
+OpenGL has this thing where sometimes one of the arguments on a function works in different ways depending on some criteria. One such as example is the .... // TODO
+
 [glDrawElements](http://docs.gl/gl4/glDrawElements) - draws vertices using indices from _GL_ELEMENT_ARRAY_
 
 [glMultiDrawElements](http://docs.gl/gl4/glMultiDrawElements) - 
@@ -35,6 +37,25 @@ buffer ShaderStorageBufferObjectBlockName {
 The last member of the _interface block_ can be a variable length array of whatever type you like. There is also runtime support for quering the length of the array with the built-in function _length_. The variable length member **must** be the last member in the _interface block_. The whole block can be marked as _readonly_ or _writeonly_.
 
 One thing to note with SSBOs are all the access flags and when to use them. Given that we are basically allocating memory we need somewhere to put this memory and some rules about who gets to touch it and when. Another thing to watch out for is that certain combinations of flags are not valid such as marking a buffer as read only in creation but then trying to map a pointer with write access to it. 
+
+#### Binding points
+Binding a SSBO is similiar to how textures works. There are a number of texture units which you bind the texture to then you pass the index of the texture unit to the shader. 
+
+Setting the binding point of the SSBO manually in the shader.
+```glsl
+layout(binding = X) buffer ShaderStorageBufferObjectBlockName {
+    uint count;  // Number of written matrices (read by the CPU)
+    mat4 MVPs[]; // Model-View-Projection matrices
+};
+```
+
+Querying and setting the binding point of the SSBO via OpenGL calls.
+```cpp
+const uint32_t SSBO_BINDING_POINT = 5;
+const GLuint block_index = glGetProgramResourceIndex(program, GL_SHADER_STORAGE_BLOCK, "SSBOBlockName");
+glShaderStorageBlockBinding(program, block_index, SSBO_BINDING_POINT);
+```
+Note that just as with texture units there are a finite number of binding points. Thankfully the spec says that there should be a **minimum** of 8 binding point for both the fragment stage and the compute stage all others are 0. Read more [here](https://www.khronos.org/opengl/wiki/Shader).
 
 ### Creation
 ```cpp
@@ -127,12 +148,6 @@ glMultiDrawElementsIndirect(GL_TRIANGLES, GL_UNSIGNED_INT, nullptr, 1, 0);
 Using _glDispatchCompute_ we launch the compute shader in 1D compute space. In order to wait for the shader to finish its computation we need to place a memory barrier ... 
 
 In this drawcall the number of commands are hardcoded to 1 due to the fact that there is only one type of object to render. 
-
-
-
-
-
-
 
 Feedback, comments, thoughts can all be dropped via Twitter [@ALingtorp](https://twitter.com/ALingtorp).
 

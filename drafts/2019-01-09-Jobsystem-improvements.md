@@ -190,3 +190,6 @@ void Renderer::update_transforms() {
 
 At this point what is the point of having a job system that only seems to slow down the renderer? Good question, next one please. The overhead reduced to *zero* the performance jumped to, a staggering I might add, **560 FPS**. That is quite a jump from the *240 FPS* at the start. It is roughly an increase of 
 **130%**. 
+
+Feedback, comments, questions and thoughts can all be dropped via Twitter [@ALingtorp](https://twitter.com/ALingtorp).
+
