@@ -92,24 +92,15 @@ Lightning calculations on the whole screen via a rendered quad.
     glBindVertexArray(gl_lightning_vao);
     glUseProgram(program);
 
-    glUniform1i(glGetUniformLocation(program, "environment_map_sampler"), gl_environment_map_texture_unit);
-    glUniform1i(glGetUniformLocation(program, "shading_model_id_sampler"), gl_shading_model_texture_unit);
-    glUniform1i(glGetUniformLocation(program, "emissive_sampler"), gl_emissive_texture_unit);
-    glUniform1i(glGetUniformLocation(program, "ambient_occlusion_sampler"), gl_ambient_occlusion_texture_unit);
-    glUniform1i(glGetUniformLocation(program, "pbr_parameters_sampler"), gl_pbr_parameters_texture_unit);
-    glUniform1i(glGetUniformLocation(program, "diffuse_sampler"), gl_diffuse_texture_unit);
-    glUniform1i(glGetUniformLocation(program, "normal_sampler"), gl_normal_texture_unit);
-    glUniform1i(glGetUniformLocation(program, "position_sampler"), gl_position_texture_unit);
-    glUniform1f(glGetUniformLocation(program, "screen_width"), screen_width);
-    glUniform1f(glGetUniformLocation(program, "screen_height"), screen_height);
-
-    glUniform3fv(glGetUniformLocation(program, "camera"), 1, &camera->position.x);
+    /* glUniform* calls omitted */
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
   }
 pass_ended();
 ```
+
+Then in the fragment shader where we apply the shading.
 
 ```glsl
 vec3 color = vec3(0.0);
@@ -127,8 +118,6 @@ switch (shading_model_id) {
 ```
 
 The type of lightning applied depends on the shading model id that is passed along the pipeline this is similiar to how Unreal Engine 4 works [reference]. 
-
-
 
 
 ```cpp
