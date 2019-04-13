@@ -15,11 +15,11 @@ First you setup a color mapping between a set of RGBA colors and a set of prefab
 
 Here is how that palette looks in Unity.
 
-![](images/tilemappings.png "Tilemappings between images and prefabs.")
+![](https://github.com/Entalpi/blog/blob/master/images/tilemappings.png "Tilemappings between images and prefabs.")
 
 Next, we need a container that represents on level. This level is composed of multiple textures in a layered format similiar to a cake.
 
-![](../images/tilelayers.png)
+![](https://github.com/Entalpi/blog/blob/master/images/tilelayers.png)
 
 **Note:** In Unity you need to mark the textures as *Read/Write Enable* in order to actually read the pixels. 
 
