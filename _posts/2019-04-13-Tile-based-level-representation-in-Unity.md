@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tile base level representation in Unity"
+title: "Tile based level representation in Unity"
 last_modified_at: 2019-04-13
 tags:
   - socani
@@ -15,7 +15,7 @@ First you setup a color mapping between a set of RGBA colors and a set of prefab
 
 Here is how that palette looks in Unity.
 
-![](../images/tilemappings.png "Tilemappings between images and prefabs.")
+![](images/tilemappings.png "Tilemappings between images and prefabs.")
 
 Next, we need a container that represents on level. This level is composed of multiple textures in a layered format similiar to a cake.
 
