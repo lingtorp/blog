@@ -100,7 +100,11 @@ cd \SteamLibrary\steamapps\common\Aseprite
 timeout /t -1
 ```
 
-After this we are left with multiple textures each corresponding to each layer in the image. Now we simply import them all into Unity and drag them into the specified level prefab and **BOOM**! We are done!
+After this we are left with multiple textures each corresponding to each layer in the image. Now we simply import them all into Unity and drag them into the specified level prefab and **BOOM**! We are done! 
+
+This is how the following level looks like in Unity.
+
+![](/assets/images/level7-unity.png)
 
 ### Remarks
 The method works fine for small, simple levels but when the complexity of the levels increase this method does **not** scale well. Just one look at the image of level7 in Aseprite should tell you the amount of confusion that I had to endure whilst creating that level. I cant even begin to describe the amount of times I lookup the color mapping since I had forgot which tint of yellow was the Crate prefab and which was the Coin one ...
