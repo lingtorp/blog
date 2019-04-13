@@ -86,7 +86,7 @@ My pixel editor of choice is [Aseprite](https://www.aseprite.org/) which is a ni
 
 Aseprite supports saving an entire palette so that is useful. Lets look how one level might look in Aseprite.
 
-![](assets/images/aseprite-level7.png "Sooo confusing..")
+![](/assets/images/aseprite-level7.png "Sooo confusing..")
 
 Notice the palette the left matching the one defined in Unity and all the different colors are in their own layers. Now we need to export this image but in a way such that each layer will be its own image. For this purpose we need to use Aseprite's command line interface in a .bat script (if we are on Windows that is).
 
@@ -112,7 +112,7 @@ It was obvios I needed an easier, faster, more visual approach to the level crea
 ## Tiled --> XML --> Unity 
 [Tiled](https://www.mapeditor.org/) is an awesome QT-based tilemap editor that can both store tileset (atlas of sprites) and a grid of sprite in a tilemap but also export these into lovely XML (.tmx and .tsx respectively). The thing that makes Tiled magical is its ability to add custom data to the tiles in the tileset and thus pass extra information to the application consuming the level information (us!).
 
-![](assets/images/tiled-example.png "Soooo muuuuch bettteeeerr")
+![](/assets/images/tiled-example.png "Soooo muuuuch bettteeeerr")
 
 Here we can import our set of sprites into a tileset, add custom data (see the left "Custom Properties"), paint our level in different layers just as in Aseprite and then just save it to XML. 
 
