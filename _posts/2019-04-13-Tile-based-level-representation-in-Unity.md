@@ -1,4 +1,10 @@
-# Tile based level representation in Unity
+---
+layout: post
+title: "Tile base level representation in Unity"
+last_modified_at: 2019-04-13
+tags:
+  - socani
+---
 
 Sometimes you need a quick and dirty way to store and create levels based on a set of tiles. Sure, Unity offers native support for tilemaps (since 2018.2 or .3) but often simple approaches works until a more solid workflow can be established. This is the case I found while developing Socani, a 2D tile-based Sokoban inspired casual puzzle game.
 
