@@ -32,6 +32,7 @@ title: Home
   (window,"UA-132056201-1",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true});
 </script>
 
+<h1>Blog posts</h1>
 <ul>
   {% for post in site.posts %}
     <li>
@@ -39,4 +40,13 @@ title: Home
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
+</ul>
+
+<h1>Projects</h1>
+<ul>
+  <div style="position: relative; text-align: center; color: white;">
+    <div style="position: absolute; bottom: 8px; left: 16px; font-size: 50px;"><a href="https://github.com/Entalpi/MeineKraft">MeineKraft</a></div>
+    <div style="position: absolute; bottom: 8px; right: 16px;">Physically based renderer - OpenGL</div>
+    <img src="https://raw.githubusercontent.com/Entalpi/MeineKraft/master/resources/screenshots/pbr-1.png">
+  </div>
 </ul>
