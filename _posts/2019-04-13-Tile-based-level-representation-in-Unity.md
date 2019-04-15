@@ -6,7 +6,7 @@ tags:
   - socani
 ---
 
-Sometimes you need a quick and dirty way to store and create levels based on a set of tiles. Sure, Unity offers native support for tilemaps (since 2018.2 or .3) but often simple approaches works until a more solid workflow can be established. This is the case I found while developing Socani, a 2D tile-based Sokoban inspired casual puzzle game.
+Sometimes you need a quick and dirty way to store and create levels based on a set of tiles. Sure, Unity offers native support for tilemaps (since 2018.2 or .3) but often simple approaches work until a more solid workflow can be established. This is the case I found while developing Socani, a 2D tile-based Sokoban inspired casual puzzle game.
 
 ## Pixel maps
 The idea here is simple. You simply store the relevant tiles in layers of textures where each pixel is one tile. For example if the level is 10x10 then one 10x10 pixel texture describes one layer of that level. Stacking tiles is the same stacking textures which is usually supported in image editing programs as layers. Therefore it is useful to be able to export all the layers of a pixel image as seperate images.
@@ -23,7 +23,7 @@ Next, we need a container that represents on level. This level is composed of mu
 
 **Note:** In Unity you need to mark the textures as *Read/Write Enable* in order to actually read the pixels. 
 
-Here is where the glue code needs to be written that actually reads the pixels from the textures and instantiates the prefabs. This is very game specific but in Socani I simply lookup the pixels color and then add a reference to the matching prefab in a Dictionary where Vector2's are mapped to lists of Tiles. The prefabs are instantiated by the caller to the level loading function due to things like scaling the level and so on.
+Here is where the glue code needs to be written that actually reads the pixels from the textures and instantiates the prefabs. This is very game specific but in Socani I simply look up the pixels color and then add a reference to the matching prefab in a Dictionary where Vector2's are mapped to lists of Tiles. The prefabs are instantiated by the caller to the level loading function due to things like scaling the level and so on.
 
 ```cs
   // Loads the tile layers in to a Dictionary with the tile position as key and a list of tiles as the value
@@ -88,7 +88,7 @@ Aseprite supports saving an entire palette so that is useful. Lets look how one 
 
 ![](/assets/images/aseprite-level7.png "Sooo confusing..")
 
-Notice the palette the left matching the one defined in Unity and all the different colors are in their own layers. Now we need to export this image but in a way such that each layer will be its own image. For this purpose we need to use Aseprite's command line interface in a .bat script (if we are on Windows that is).
+Notice that the palette on the left matches the one defined in Unity and all the different colors are in their own layers. Now we need to export this image but in a way such that each layer will be its own image. For this purpose we need to use Aseprite's command line interface in a .bat script (if we are on Windows that is).
 
 ```bat
 D:
@@ -238,7 +238,7 @@ Here is how the level looks in XML from Tiled ...
 </map>
 ```
 
-... and here is the tileset.
+... and here is the tileset (some omissions for clarity).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
