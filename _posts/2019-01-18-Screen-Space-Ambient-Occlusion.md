@@ -3,7 +3,7 @@ layout: post
 title: "Screen Space Ambient Occlusion (SSAO)"
 last_modified_at: 2019-01-18
 tags:
-  - opengl
+  - OpenGL
 ---
 
 Ambient occlusion (AO) is basically the amount of local shadowing happening from the ambient light on a given surface. This shadowing is static and is caused by the ambient light which in most cases is faked by simply setting it to a some value. This method is cheap and produces results that are good enough in most cases.
