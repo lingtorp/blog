@@ -38,6 +38,7 @@ title: Home
     <li>
       <span class="post-date">{{ post.date | date_to_string }}</span>
       <a href="{{ post.url }}">{{ post.title }}</a>
+      <div>{% include post-tags.html post=post %}</div>
     </li>
   {% endfor %}
 </ul>
@@ -45,8 +46,32 @@ title: Home
 <h1>Projects</h1>
 <ul>
   <div style="position: relative; text-align: center; color: white;">
-    <div style="position: absolute; bottom: 8px; left: 16px; font-size: 50px;"><a href="https://github.com/Entalpi/MeineKraft">MeineKraft</a></div>
-    <div style="position: absolute; bottom: 8px; right: 16px;">Physically based renderer, game engine - OpenGL</div>
-    <img src="https://raw.githubusercontent.com/Entalpi/MeineKraft/master/resources/screenshots/pbr-1.png">
+    <div style="position: absolute; bottom: 8px; left: 16px; font-size: 50px; text-shadow: black 0.1em 0.1em 0.2em;"><a href="https://github.com/Entalpi/MeineKraft">MeineKraft</a></div>
+    <div style="position: absolute; bottom: 8px; right: 16px; text-shadow: black 0.1em 0.1em 0.2em;">Physically based renderer, game engine</div>
+    <img style="box-shadow: black 0.5em 0.5em 0.3em" src="https://raw.githubusercontent.com/Entalpi/MeineKraft/master/resources/screenshots/pbr-1.png"/>
   </div>
+
+  <div style="position: relative; text-align: center; color: white;">
+    <div style="position: absolute; bottom: 8px; left: 16px; font-size: 50px; text-shadow: black 0.1em 0.1em 0.2em;"><a href="https://github.com/Entalpi/socani">Socani</a></div>
+    <div style="position: absolute; bottom: 8px; right: 16px; text-shadow: black 0.1em 0.1em 0.2em;">Unity game</div>
+    <img style="box-shadow: black 0.5em 0.5em 0.3em" src="https://raw.githubusercontent.com/Entalpi/Socani/master/screenshots/socani-lvl6.gif?token=AAMTLIWEPZPCUN7ZCPEYI3C5YUMTO"/>
+  </div>
+
+  <div style="position: relative; text-align: center; color: white;">
+    <div style="position: absolute; bottom: 8px; left: 16px; font-size: 50px; text-shadow: black 0.1em 0.1em 0.2em"><a href="https://github.com/Entalpi/Rome-Total-Simulation">Rome: Total Simulation</a></div>
+    <div style="position: absolute; bottom: 8px; right: 16px; text-shadow: black 0.1em 0.1em 0.2em">Terminal game</div>
+    <img src="https://raw.githubusercontent.com/Entalpi/Rome-Total-Simulation/master/resources/screenshots/rts-screenshot.png"/>
+  </div>
+
+  <div style="position: relative; text-align: center; color: white;">
+      <div style="position: absolute; bottom: 8px; left: 16px; font-size: 50px; text-shadow: black 0.1em 0.1em 0.2em"><a href="https://github.com/Entalpi/Rusteray">Rusteray</a></div>
+      <div style="position: absolute; bottom: 8px; right: 16px; text-shadow: black 0.1em 0.1em 0.2em">Path tracer, Rust</div>
+      <img src="https://raw.githubusercontent.com/Entalpi/Rusteray/master/screenshots/cornell-oren-nayar-10spp-denoised.png"/>
+  </div>
+
+  <div style="position: relative; text-align: center; color: white;">
+    <div style="position: absolute; bottom: 8px; left: 16px; font-size: 50px; text-shadow: black 0.1em 0.1em 0.2em"><a href="https://github.com/Entalpi/goldship">Goldship</a></div>
+    <div style="position: absolute; bottom: 8px; right: 16px; text-shadow: black 0.1em 0.1em 0.2em">Unreal Engine 4 game</div>
+    <img src="/assets/images/goldship.png"/>
+   </div>
 </ul>

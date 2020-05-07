@@ -3,7 +3,7 @@ layout: post
 title: "MeineKraft Rendering Pipeline"
 last_modified_at: 2019-01-18
 tags:
-    - MeineKraft
+    - MeineKraft, OpenGL
 ---
 
 I realized that I have never actually described how the rendering pipeline of MeineKraft works or even looks like. Here I will describe how it currently works and what some of the short terms goals for the project are and also some of the long term ones as well. Los geht's!
