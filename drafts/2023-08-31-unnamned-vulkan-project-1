@@ -1,0 +1,39 @@
+# Unamned Vulkan Project - Blog Post #1
+During this summer I started working a bit more serious on something that uses Vulkan. I am not sure where I want to take this project. I was thinking of a model viewer but recently 
+particle systems has attracted my attention. As always the urge to make this entire project into a game engine is tempting and I have been looking into EnTT.
+
+Coming from an OpenGL background Vulkan is interesting. Its a completely different beast and as such there is a lot to learn. Of the things to learn I would not say the things are 
+difficult to grasp on their own but rather the interconnections and dependencies are hard to remember. Put simply its having a pretty large graph in ones head.
+
+This is not my first exposure to Vulkan 
+
+## Architecture
+* Primary command buffers to execute secondary command buffers
+Benefits of this approach is that the secondary command buffers are not tied to the render pass in which the primary command buffer is submmitted in. 
+
+By using [VkCommandBufferInheritanceInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkCommandBufferInheritanceInfo.html) the state which is inherited from the outside render pass is specified.
+
+Using `VK_COMMAND_BUFFER_USAGE_RENDER_PASS_CONTINUE_BIT` on the secondary command buffers tells Vulkan that they are meant to be executed within a render pass.
+
+Other noteworthy tidbits are that render passes and subpases cant start in secondary command buffers - only in primary ones. 
+
+Apparently both primary and secondary command buffers are able to be allocated and recorded in parallel - which is nice on multi-core processors since this operations is slow-ish.
+
+The main benefit that got me interesting in this archtecture is that one can use static secondary command buffers that depend on dynamic values in memory. 
+
+- For example executing this indirect draw commands in a buffer 
+The command to execute the indirect draw commands reside in a buffer that is static but the number of draw commands might be produced in a dynamic way - for example by a 
+view frustum culling pass.
+
+* Compute shaders
+Speaking of view frustum culling this is planned to be executed on the GPU and thus enable the creation of indirect draw commands directly on the GPU. The draw command buffer
+thus never needs to even reside on the client but can be hosted on the device.
+
+Other interesting areas that I want to explore with compute shaders are particle systems as well as motion blur and depth of field.
+
+Tieing all of these things together in a modular way most likely will result in this being some kind of stand-alone rendering system. Therefore the hope is that the distance to a
+fully fledged game engine is not that far. The dream would be to include this work with EnTT or a custom ECS system. We will see where this project ends up..
+
+
+
+
